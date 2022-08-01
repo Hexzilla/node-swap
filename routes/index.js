@@ -11,9 +11,9 @@ router.get('/', (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   axios.post('https://nodes.pancakeswap.com', req.body)
-    .then((res) => {
-      console.log('res', res)
-      return res.json(res.data)
+    .then((result) => {
+      console.log('result', result)
+      return res.json(result.data)
     })
     .catch(console.error)
 })
