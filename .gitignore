@@ -1,0 +1,8 @@
+node_modules
+package-lock.json
+.env
+tasties_parcel/dist
+tasties_parcel/.parcel-cache
+godhates/dist
+godhates/.parcel-cache/
+.mint

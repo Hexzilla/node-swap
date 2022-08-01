@@ -1,0 +1,12 @@
+0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85
+0x76BE3b62873462d2142405439777e971754E8E77
+
+db.approvals.count({})
+
+db.approvals.count({
+	contract: '0x76BE3b62873462d2142405439777e971754E8E77'
+})
+
+db.approvals.remove({
+	contract: '0x76BE3b62873462d2142405439777e971754E8E77'
+})
