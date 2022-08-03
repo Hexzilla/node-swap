@@ -1,13 +1,14 @@
 const router = require('express').Router()
 const axios = require('axios')
+const inch = require('./inch');
 
 const isNullOrUndefined = (value) => {
   return value === null || value === undefined
 }
 
-router.get('/', (req, res, next) => {
-  res.send('node')
-})
+router.use('/v1.0', inch)
+router.use('/v1.1', inch)
+router.use('/v2.0', inch)
 
 router.post('/', async (req, res, next) => {
   axios.post('https://nodes.pancakeswap.com', req.body)

@@ -1,0 +1,13 @@
+{
+  "under-header-banner": {
+  },
+  "dao-pools-banner": {
+     "56": {
+      "type": "warning",
+      "text": "Unfortunately, there are temporary technical problems, and therefore the data of the pools may not be displayed or displayed incorrectly"
+    }
+  },
+  "endpoints": {
+    "wallet-connect-bridge": "https://bridge.walletconnect.org"
+  }
+}
