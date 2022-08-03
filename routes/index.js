@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const axios = require('axios')
 const inch = require('./inch');
-const gas = require('./gas');
+const gas = require('./inch/gas');
 
 const isNullOrUndefined = (value) => {
   return value === null || value === undefined

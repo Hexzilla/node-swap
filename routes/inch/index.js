@@ -6,7 +6,9 @@ const isNullOrUndefined = (value) => {
 }
 
 router.get('/distribution/v2/:address', (req, res, next) => {
-  axios.get(`https://governance.1inch.io/v1.1/distribution/v2/${req.params.address}`)
+  const { address } = req.params;
+  console.log('distribution-v2')
+  axios.get(`https://governance.1inch.io/v1.1/distribution/v2/${address}`)
     .then((result) => {
       return res.json(result.data)
     })
@@ -14,7 +16,9 @@ router.get('/distribution/v2/:address', (req, res, next) => {
 })
 
 router.get('/distribution/:address', (req, res, next) => {
-  axios.get(`https://governance.1inch.io/v1.1/distribution/${req.params.address}`)
+  const { address } = req.params;
+  console.log('distribution-v1')
+  axios.get(`https://governance.1inch.io/v1.1/distribution/${address}`)
     .then((result) => {
       return res.json(result.data)
     })
@@ -82,6 +86,7 @@ router.get('/:tokenId', (req, res, next) => {
     .then((result) => {
       return res.json(result.data)
     })
+    .catch(console.error)
 })
 
 module.exports = router
