@@ -11,5 +11,6 @@ router.get('/:tokenId', (req, res, next) => {
     .then((result) => {
       return res.json(result.data)
     })
+    .catch(console.error)
 })
 module.exports = router
