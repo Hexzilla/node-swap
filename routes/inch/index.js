@@ -65,6 +65,17 @@ router.post('/:tokenId/allowancesAndBalances/:contract/:address', (req, res, nex
     .catch(console.error)
 })
 
+router.get('/:tokenId/allowancesAndBalances/:contract/:address', (req, res, next) => {
+  const { tokenId, contract, address } = req.params;
+  const { tokensFetchType } = req.query;
+  const url = `https://balances.1inch.io/v1.1/${tokenId}/allowancesAndBalances/${contract}/${address}?tokensFetchType=${tokensFetchType}`
+  axios.post(url, req.body)
+    .then((result) => {
+      return res.json(result.data)
+    })
+    .catch(console.error)
+})
+
 router.get('/:tokenId', (req, res, next) => {
   const { tokenId } = req.params;
   axios.get(`https://token-prices.1inch.io/v1.1/${tokenId}`)
